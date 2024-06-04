@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기아 - Movement that inspires  | 기아 공식 사이트</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- BS CDN 추가 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        /* 인디케이터 보이게 하기 위해서 높이 조절 */
+        /* #myCarousel, .carousel-inner{
+            height: 900px;
+        }  */
+        .carousel-caption{
+            position: absolute;
+            left: 30px;
+            bottom: 250px;
+            text-align: left;
+            /* animation-name: ani;
+            animation-duration: 0.5s; */
+        }
+        #bestKia h3{
+            font-size: 50px;
+        }
+        #bestKia .box{
+            border:1px solid #dddddddd;
+            border-radius: 10px;
+            /* 상자속 여백 */
+            padding: 20px;
+        }
+        #bestKia .nav-tabs{
+            margin-bottom: 50px;
+        }
+        /* li태그에 붙은 active 변하는걸 찾아본다 a였다.*/
+        #bestKia .nav-tabs li.active a{
+            /* background-color: red; */
+            /* 모서리를 없앰 */
+            border-radius: 0;
+            /* 보더를 싹다 없앰. 원래 있던 스타일에 덮어 씌운거 같다 */
+            border: none;
+            border-bottom: 2px solid black;
+        }
+        #bestKia .box .col-sm-8,#bestKia .box .price{
+            text-align: right;
+        }
+        #bestKia .box .btn{
+            border-radius: 0;
+        }
+        .btn-black{
+            background-color: black;
+            color: white;
+        }
+        .btn-black:hover{
+            background-color: rgb(130, 129, 129);
+            color: #dddddd;
+        }
+        /* div는 가로를 다 차지한다 박스를 가운데 정렬하려면 콘텐츠와 widh를 같게한다 */
+        /* 버튼을 가운데 정렬하기 위해 버튼의 부모를 옮겨야한다. */
+        .btn-box{
+            text-align: center;
+        }
+        .sort{
+            text-align: center;
+            padding: 20px;
+        }
+        #etc .box{
+            padding: 10px;
+            background-color: #eeeeee;
+        }
+        #etc .box img{
+            width: 30px;
+        }
+        #etc .box h3{
+            font-size: 17px;
+            font-weight: bold;
+        }
+        /* 이름이 안붙여져 있으니 순서로 정하는 nth차일드 같은거 이용하면 좋다 */
+        /* 보이게 한다 */
+        #etc .box img:nth-child(1){display: inline;}
+        /* 안보이게 한다 */
+        #etc .box img:nth-child(2){display: none;}
+        #news .col-sm-6{
+            float: right;
+        /* 박스 나란히 같은 크기로 만들기 */
+            height: 450px;
+        }
+        #news .col-sm-6:nth-child(2){
+            background-color: #697278;
+        }
+        #news .col-sm-4{
+            padding-top: 50px;
+            padding-bottom: 150px;
+        }
+        #footer1{
+            background-color: #05141F;
+        }
+        
+        /* 눌렀을 때 반응하는건 CSS로는 힘들다 자바나 제이퀄이 필요 */
+        /* @keyframes ani{
+            from{left: -50px;}
+            to{left: 30px;}
+        } */
+    </style>
+
+</head>
+<body>
+    <!-- Add a Carousel -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators 선택하는 점 -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+      
+        <!-- Wrapper for slides 사진 나오는곳-->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="img/pc01.jpg" alt="The Kia Ray EV">
+                <!-- 글자 적는곳 -->
+                <div class="carousel-caption">
+                    <p>새로운 도심 엔트리 EV</p>
+                    <h2>The Kia Ray EV</h2>
+                </div>
+            </div>
+            
+            <div class="item">
+                <img src="img/pc03.jpg" alt="The Kia EV3">
+                <div class="carousel-caption">
+                    <p>전동화로 향하는 글로벌 전환을 위한 또 하나의 대담한 발걸음</p>
+                    <h2>The Kia EV3</h2>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="img/pc02.jpg" alt="Online page">
+                <div class="carousel-caption">
+                    <p>스마트한 카 라이프의 시작! 기아렌터카</p>
+                    <h2>기아렌터카 온라인 페이지</h2>
+                </div>
+            </div>
+      
+        </div>
+      
+        <!-- Left and right controls 이미지 바뀌는 효과 -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- 여백 만들기 위해 컨테이너 안에 모아 넣었다. 아직 안만듬 -->
+    <!-- best Kia -->
+    <!-- 컨테이너를 이용하면 여백이 생김 플루이드는 여백이 없음 -->
+    <div id="bestKia" class="container">
+        
+        <!-- Add Toggable Tabs 탭 추가-->
+        <h3 class="text-center">Best Kia</h3>
+        <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">최근 출시</a></li>
+        <li><a data-toggle="tab" href="#menu1">연비 효율</a></li>
+        <li><a data-toggle="tab" href="#menu2">적재공간</a></li>
+        <li><a data-toggle="tab" href="#menu3">안전성</a></li>
+        </ul>
+        <!-- 탭이랑 탭 콘텐츠 사이에 여백이 필요 -->
+        <div class="tab-content">
+            <!-- 최근 출시 -->
+            <div id="home" class="tab-pane fade in active">
+                <!-- 칸 3개 만들기 위해서 4(총 12임) -->
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="box">
+                            <h4>The new EV6
+                                <span class="badge">TOP1</span>
+                            </h4>
+                            <div>EV전기차 | 롱레인지 GT-line 4WD A/T</div>
+                            <img src="img/car01.png" alt="The new EV6" width="90%">
+                            <!-- 스펙 적기 -->
+                            <div class="row">
+                                <div class="col-sm-4">출시일</div>
+                                <div class="col-sm-8">2024-05-14</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">배터리 용량</div>
+                                <div class="col-sm-8">84 kWh</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">최고 출력</div>
+                                <div class="col-sm-8">239 kW / 325 ps</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">외장 컬러</div>
+                                <div class="col-sm-8">요트 매트 블루</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">옵션 (6)</div>
+                                <div class="col-sm-8">스웨이드 컬렉션</br>
+                                    빌트인 캠2</br>
+                                    메리디안 프리미엄 사운드 등
+                                </div>
+                            </div>
+                            <!-- 가로선 출력 hr, di나 span 이나 border 이용 방법 다양함-->
+                            <hr>
+                            <!-- 가격 -->
+                            <div>
+                                <!-- h 태그는 쓰면 안된다 제목이기에... -->
+                                <div class="price">70,150,000</div>
+                            </div>
+                            <!-- 버튼 두개 자세히보기 견적내기 만들기 -->
+                            <div class="btn-box">
+                                <a href="#" class="btn btn-default">자세히 보기</a>
+                                <a href="#" class="btn btn-black">견적 내기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="box">
+                            <h4>The 2024 K9
+                                <span class="badge">TOP2</span>
+                            </h4>
+                            <div>3.3 가솔린 터보 | 마스터즈 AWD</div>
+                            <img src="img/car02.png" alt="The 2024 K9" width="90%">
+                            <!-- 스펙 적기 -->
+                            <div class="row">
+                                <div class="col-sm-4">출시일</div>
+                                <div class="col-sm-8">2024-04-02</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">배기량</div>
+                                <div class="col-sm-8">3,342 cc</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">최고 출력</div>
+                                <div class="col-sm-8">370 ps / 6,000 rpm</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">외장 컬러</div>
+                                <div class="col-sm-8">딥 크로마 블루</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">옵션 (4)</div>
+                                <div class="col-sm-8">Lexicon 프리미엄 사운드</br>
+                                    프리미엄 팩</br>
+                                    뒷좌석 듀얼 모니터 등
+                                </div>
+                            </div>
+                            <!-- 가로선 출력 hr, di나 span 이나 border 이용 방법 다양함-->
+                            <hr>
+                            <!-- 가격 -->
+                            <div>
+                                <div class="price">70,150,000</div>
+                            </div>
+                            <!-- 버튼 두개 자세히보기 견적내기 만들기 -->
+                            <div class="btn-box">
+                                <a href="#" class="btn btn-default">자세히 보기</a>
+                                <a href="#" class="btn btn-black">견적 내기</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="box">
+                            <h4>The Kia EV6 GT
+                                <span class="badge">TOP3</span>
+                            </h4>
+                            <div>EV전기차 | GT 4WD A/T</div>
+                            <img src="img/car03.png" alt="The Kia EV6 GT" width="90%">
+                            <!-- 스펙 적기 -->
+                            <div class="row">
+                                <div class="col-sm-4">출시일</div>
+                                <div class="col-sm-8">2024-03-04</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">배터리 용량</div>
+                                <div class="col-sm-8">77.4 kWh</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">최고 출력</div>
+                                <div class="col-sm-8">430 kW / 585 ps</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">외장 컬러</div>
+                                <div class="col-sm-8">문스케이프 매트 그레이</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">옵션 (2)</div>
+                                <div class="col-sm-8">빌트인 캠</br>
+                                    와이드 선루프
+                                </div>
+                            </div>
+                            <!-- 가로선 출력 hr, di나 span 이나 border 이용 방법 다양함-->
+                            <hr>
+                            <!-- 가격 -->
+                            <div>
+                                <div class="price">70,150,000</div>
+                            </div>
+                            <!-- 버튼 두개 자세히보기 견적내기 만들기 -->
+                            <div class="btn-box">
+                                <a href="#" class="btn btn-default">자세히 보기</a>
+                                <a href="#" class="btn btn-black">견적 내기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sort">
+                    ※ 차량의 출시일 기준이며 차량별 사양 구성은 최다 판매 기준입니다.
+                </div>
+            </div>
+
+            <!-- 연비 효율 -->
+            <div id="menu1" class="tab-pane fade">
+            </div>
+
+            <!-- 적재공간 -->
+            <div id="menu2" class="tab-pane fade">
+            </div>
+
+            <!-- 안전성 -->
+            <div id="menu3" class="tab-pane fade">
+            </div>
+        </div>
+
+        
+    </div>
+
+    <!-- ETC -->
+    <div id="etc" class="container">
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="box">
+                    <img src="img/icon_car-01.svg" alt="견적내기아이콘">
+                    <img src="img/icon_car-01-w.svg" alt="견적내기아이콘">
+                    <h3>견적 내기</h3>
+                    <!-- 원본에서는 ::after 를 이용함 -->
+                    <div>자세히보기</div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="box">
+                    <img src="img/icon_steering.svg" alt="시승신청아이콘">
+                    <img src="img/icon_steering-w.svg" alt="시승신청아이콘">
+                    <h3>시승 신청</h3>
+                    <!-- 원본에서는 ::after 를 이용함 -->
+                    <div>자세히보기</div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="box">
+                    <img src="img/icon_location.svg" alt="판매네트워크아이콘">
+                    <img src="img/icon_location-w.svg" alt="판매네트워크아이콘">
+                    <h3>판매 네트워크</h3>
+                    <!-- 원본에서는 ::after 를 이용함 -->
+                    <div>자세히보기</div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="box">
+                    <img src="img/icon_gift-box.svg" alt="이달의구매혜택아이콘">
+                    <img src="img/icon_gift-box-w.svg" alt="이달의구매혜택아이콘">
+                    <h3>이 달의 구매 혜택</h3>
+                    <!-- 원본에서는 ::after 를 이용함 -->
+                    <div>자세히보기</div>
+                </div>            
+            </div>
+        </div>
+    </div>
+
+    <!-- News -->
+    <div id="news" class="container">
+        <h3 class="text-center">News</h3>
+        <div class="row">
+            <!-- float right를 하면 모양이 나온다. -->
+            <div class="col-sm-6">
+                <img src="img/ev3_pc.jpg" alt="EV3" width="100%" height="100%">
+            </div>
+            
+            <div class="col-sm-6">
+                <div>
+                    <div class="box">
+                        <h5>기아 소식</h5>
+                        <h4>기아, ‘더 기아 EV3’ 세계 최초 공개</h4>
+                        <p>
+                            전기차 대중화를 이끌 기아의 전용 콤팩트 SUV 전기차가 탄생했다.
+                            기아가 23일(목) 월드프리미어 영상을 통해 더 기아 EV3(The Kia EV3, 이하 EV3)를 공개했다.
+                        </p>
+                        <a href="#" class="btn btn-default">자세히 보기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 뉴스와 공지 -->
+        <div class="row">
+            <div class="col-sm-4">
+                <h4>뉴스</h4>
+                <p>기아, 제11회 스킬 월드컵 성료</p>
+            </div>
+            <div class="col-sm-4">
+                <h4>뉴스</h4>
+                <p>기아, ‘더 기아 EV3’ 세계 최초 공개</p>
+            </div>
+            <div class="col-sm-4">
+                <h4>공지</h4>
+                <p>개인정보 처리방침 변경 안내 (2024.05.31)</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer@@@@@@ -->
+    <!-- fluid는 여백이 없다! -->
+    <div id="footer1" class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <img src="img/logo_w.svg" alt="Kia 로고">
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="row">
+        <div class="col-sm-3">
+
+        </div>
+        <div class="col-sm-6">
+
+        </div>
+        <div class="col-sm-3">
+
+        </div>
+    </div> -->
+</body>
+</html>
