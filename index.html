@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>기아 - Movement that inspires  | 기아 공식 사이트</title>
     <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- animated -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- 폰트 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +17,21 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    <!-- 애니메이션 CSS CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+     <!-- jQuery CDN -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   <!-- jQuery  -->
+    <script>
+        $(document).ready(function(){
+            // 애니메이션
+            $(document).scroll(function(e){
+                console.log($(window).scrollTop());
+                if($(window).scrollTop()>1300){
+                    $(".text").addClass("animate__fadeInUp")
+                }
+            });
+        });
 
+    </script>
     <style>
         /* 네비 꾸미기 */
         /* 네비 계속 따라오는거 제거 네비 클래스 자체에 든 값 때문이다 */
@@ -1191,16 +1207,16 @@
         <!-- 뉴스와 공지 -->
         <div class="row">
             <div class="col-sm-4">
-                <h4>뉴스</h4>
-                <p>기아, 제11회 스킬 월드컵 성료</p>
+                <h4 class="animate__animated text">뉴스</h4>
+                <p class="animate__animated text">기아, 제11회 스킬 월드컵 성료</p>
             </div>
             <div class="col-sm-4">
-                <h4>뉴스</h4>
-                <p>기아, ‘더 기아 EV3’ 세계 최초 공개</p>
+                <h4 class="animate__animated text">뉴스</h4>
+                <p class="animate__animated text">기아, ‘더 기아 EV3’ 세계 최초 공개</p>
             </div>
             <div class="col-sm-4">
-                <h4>공지</h4>
-                <p>개인정보 처리방침 변경 안내 (2024.05.31)</p>
+                <h4 class="animate__animated text">공지</h4>
+                <p class="animate__animated text">개인정보 처리방침 변경 안내 (2024.05.31)</p>
             </div>
         </div>
     </div>
@@ -1386,6 +1402,12 @@
                 </div>
             </div>
         </div>
+
+    </div>
+
+    
+</body>
+</html>
 
     </div>
 
